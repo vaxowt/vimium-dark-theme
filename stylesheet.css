@@ -30,20 +30,20 @@
 /* -------- HINTS -------- */
     --bg-hints: #FFD752;      /* Background color of link hints */
     --border-hints: #F4CA46;  /* Border color of link hints */
-    --fg-hints: #000000;      /* Text color of link hints, (don't forget to change `#vimiumHintMarkerContainer div > .matchingCharacter ~ span`) */
+    --fg-hints: #000000;      /* Text color of link hints, (don't forget to change `#vimium-hint-marker-container div > .matchingCharacter ~ span`) */
 }
 
 /* --------------------------------- CSS --------------------------------- */
 
 /* -------- HINTS -------- */
-#vimiumHintMarkerContainer div.internalVimiumHintMarker, #vimiumHintMarkerContainer div.vimiumHintMarker {
+#vimium-hint-marker-container div.internal-vimium-hint-marker, #vimium-hint-marker-container div.vimiumHintMarker {
     background: var(--bg-hints);
     border: 1px solid var(--border-hints);
     box-shadow: var(--shadow);
     padding: 2px 3px;
 }
 
-#vimiumHintMarkerContainer div span {
+#vimium-hint-marker-container div span {
     color: var(--fg-hints);
     font-family: var(--font);
     font-size: var(--font-size-hints);
@@ -51,11 +51,11 @@
     text-shadow: none;
 }
 
-#vimiumHintMarkerContainer div > .matchingCharacter {
+#vimium-hint-marker-container div span {
     opacity: 0.3;
 }
 
-#vimiumHintMarkerContainer div > .matchingCharacter ~ span {
+#vimium-hint-marker-container div span.matchingCharacter {
     color: var(--hints-main-fg);
 }
 
@@ -80,7 +80,7 @@
     }
 }
 
-#vomnibar .vomnibarSearchArea,
+#vomnibar #vomnibar-search-area,
 #vomnibar input {
     /* ALTERNATE BACKGROUND COLOR:
     background: transparent; */
@@ -93,7 +93,7 @@
     font-weight: var(--font-weight);
 }
 
-#vomnibar .vomnibarSearchArea {
+#vomnibar #vomnibar-search-area {
     padding: 8px 30px;
     border-radius: 6px;
 }
@@ -118,111 +118,114 @@
     padding-bottom: 8px;
 }
 
-#vomnibar li .vomnibarTopHalf {
+#vomnibar li .top-half {
     padding: var(--padding);
 }
 
-#vomnibar li .vomnibarBottomHalf {
+#vomnibar li .bottom-half {
     padding-top: 0px;
     padding-bottom: 1px;
 }
 
-#vomnibar li .vomnibarSource {
+#vomnibar li .source {
     color: var(--fg-dark);
     font-family: var(--font);
     font-size: 12;
     font-weight: var(--font-weight-bold);
-    text-transform: uppercase; /* `.vomnibarSource` will be in all uppercase letters. Delete to revert to original */
+    text-transform: uppercase; /* `.source` will be in all uppercase letters. Delete to revert to original */
 }
 
 #vomnibar li em,
-#vomnibar li .vomnibarTitle {
+#vomnibar li .title {
     color: var(--fg);
     font-family: var(--font);
     font-size: var(--font-size);
     font-weight: var(--font-weight-medium);
 }
 
-#vomnibar li .vomnibarUrl {
+#vomnibar li .url {
     color: var(--fg-url);
     font-family: var(--font);
     font-size: var(--font-size-url);
     font-weight: var(--font-weight-medium);
 }
 
-#vomnibar li .vomnibarMatch {
+#vomnibar li .match {
     color: var(--fg-match);
     font-weight: normal;
 }
 
-#vomnibar li .vomnibarTitle .vomnibarMatch {
+#vomnibar li .title .match {
     color: var(--fg);
     font-weight: bold;  
 }
 
-#vomnibar li.vomnibarSelected {
+#vomnibar li.selected {
     background-color: var(--bg-selected);
     border-radius: 3px;
 }
 
-#vomnibar li.vomnibarSelected .vomnibarUrl { /* Changes '.vomnibarURL' to '--fg-match' when selected */
+#vomnibar li.selected .url { /* Changes '.vomnibarURL' to '--fg-match' when selected */
     color: var(--fg-match);
 }
 
-#vomnibar li.vomnibarSelected .vomnibarMatch {  /* Changes '.vomnibarMatch' to '--fg' when selected */
+#vomnibar li.selected .match {  /* Changes '.match' to '--fg' when selected */
     color: var(--fg);
 }
 
 /* -------- HUD -------- */
-div.vimiumHUD {
+div#hud-container {
     background: var(--bg);
     border: 1px solid var(--border);
     box-shadow: var(--shadow);
     border-radius: 6px;
 }
 
-div.vimiumHUD span#hud-find-input,
-div.vimiumHUD .vimiumHUDSearchAreaInner {
+div#hud-container span#hud-find-input,
+div#hud-container div#hud {
     color: var(--fg);
     font-family: var(--font);
     font-size: 13;
     font-weight: var(--font-weight-medium);
 }
 
-div.vimiumHUD .hud-find {
+div#hud-container .hud-find {
     background-color: transparent;
     border: none;
 }
 
-div.vimiumHUD .vimiumHUDSearchArea {
+div#hud-container #search-area {
     background-color: transparent;
     padding: 6px;
 }
 
 /* -------- HELP DIALOG -------- */
-div#vimiumHelpDialog {
+
+div#container {
   border: 1px solid var(--border);
   border-radius: 5px;
   background: var(--bg-searcharea);
   font-family: var(--font);
   font-size: var(--font-size);
-}
-
-span#vimiumTitle {
   color: var(--fg);
 }
 
-a:link.vimiumHelDialogLink, 
-a:visited.vimiumHelDialogLink, 
-a:hover.vimiumHelDialogLink, 
-a:active.vimiumHelDialogLink,
-a#toggleAdvancedCommands {
+div#container h1,
+div#container .vim {
+  color: var(--fg);
+}
+
+div#container a:link,
+div#container a:visited,
+div#container a:hover,
+div#container a:active,
+a#toggle-advanced {
   color: var(--fg-url);
   font-family: var(--font);
   font-size: var(--font-size);
 }
 
-span.vimiumHelpDialogKey {
+div#container .key {
   background-color: var(--bg-hints);
   border: 1px solid var(--border-hints);
   box-shadow: var(--shadow);
@@ -234,12 +237,12 @@ span.vimiumHelpDialogKey {
   text-shadow: none;
 }
 
-td.vimiumHelpSectionTitle, td.vimiumHelpDescription {
+div#container h2, div#container .help-description {
   color: var(--fg);
   font-family: var(--font);
 }
 
-div.vimiumColumn {
+div#container .column {
   color: var(--fg);
   font-family: var(--font);
 }
