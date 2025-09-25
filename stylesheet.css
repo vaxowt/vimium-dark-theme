@@ -30,7 +30,8 @@
 /* -------- HINTS -------- */
     --bg-hints: #FFD752;      /* Background color of link hints */
     --border-hints: #F4CA46;  /* Border color of link hints */
-    --fg-hints: #000000;      /* Text color of link hints, (don't forget to change `#vimium-hint-marker-container div > .matchingCharacter ~ span`) */
+    --fg-hints: #000000;      /* Text color of link hints */
+    --hints-main-fg: #D4AC3A; /* Text color of matching characters in link hints */
 }
 
 /* --------------------------------- CSS --------------------------------- */
@@ -49,10 +50,6 @@
     font-size: var(--font-size-hints);
     font-weight: var(--font-weight-bold);
     text-shadow: none;
-}
-
-#vimium-hint-marker-container div span {
-    opacity: 0.3;
 }
 
 #vimium-hint-marker-container div span.matchingCharacter {
